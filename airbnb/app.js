@@ -5,9 +5,10 @@ const app = express()
 
 const userRouter = require("./routes/userRouter")
 const hostRouter = require("./routes/hostRouter")
-const rootDir = require('./utils/pathUtil')
 
-app.use(express.static(path.join(rootDir, 'public')))
+const rootDir = require('./utils/pathUtil');
+console.log("Root directory detected as:", rootDir);
+app.use(express.static(path.join(rootDir, 'public')));
 
 app.use(express.urlencoded())
 app.use(userRouter)
