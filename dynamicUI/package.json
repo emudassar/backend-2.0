@@ -1,27 +1,26 @@
 {
-  "name": "airbnb",
+  "name": "chapter-10---airbnb",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "concurrently \"npx nodemon app.js\" \"npx postcss ./public/styles.css -o ./public/output.css --watch\"",
-    "build:css": "npx postcss ./public/styles.css -o ./public/output.css --watch"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "tailwindcss -i ./views/input.css -o ./public/output.css --watch",
+    "start": "nodemon app.js & npm run tailwind",
+    "dev": "nodemon app.js & npm run tailwind"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "ejs": "^4.0.1",
-    "express": "^5.2.1"
-  },
+  "description": "",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.18",
-    "autoprefixer": "^10.4.23",
-    "concurrently": "^9.2.1",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
-    "tailwindcss": "^4.1.18"
+    "autoprefixer": "^10.4.20",
+    "nodemon": "^3.1.7",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
   }
 }
